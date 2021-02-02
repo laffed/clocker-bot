@@ -7,27 +7,37 @@ Python Selenium ChromeDriver Bot that can quickly handle clocking events for a C
   2. Selenium
   3. Chromedriver
   4. python dot env
-  5. Sendgrid account (free)
+  5. sendgrid-python
+  6. Sendgrid account (free)
 
   **Note:** A Sendgrid account is used to enable email confirmation. If running clocker_bot from the terminal manually, the user will receive confirmation of the clock event in the terminal so in this case a Sendgrid is not needed. The Sendgrid function calls in clocker.py will need to be deleted/commented out if so. 
 
 # Installation
 
-  1. Install python/python3 and pip/pip3
-  2. Clone this repository
-  3. Install [Selenium](https://selenium-python.readthedocs.io/installation.html)
-  4. Install [Chromedriver](https://chromedriver.chromium.org/):
+### Install python/python3 and pip/pip3
+### Clone this repository
+### Install [Selenium](https://selenium-python.readthedocs.io/installation.html)
+```
+pip install selenium
+```
+### Install [Chromedriver](https://chromedriver.chromium.org/):
     - First determine which version of chrome you have by opening Chrome > help > About Google Chrome
     - Choose the version of Chromedriver that matches your major version of Chrome
     - Unzip and place the chromedriver.exe anywhere you'd like noting its path. The simplest location will be in the repository folder. 
 
-  5. Install [python-dotenv](https://pypi.org/project/python-dotenv/)
-  6. Signup for a free [Sendgrid](https://signup.sendgrid.com/) account
-    -  Add your sender email to Sendgrid from the dashboard. 
+### Install [python-dotenv](https://pypi.org/project/python-dotenv/)
+### Signup for a free [Sendgrid](https://signup.sendgrid.com/) account
+    - Add your sender email to Sendgrid from the dashboard. 
     - Navigate to Settings > API Keys and create a new API Key. 
     - **WARNING** Sendgrid will only show you this API key ONCE so copy and paste it somewhere safe. 
 
-  7. Create a .env file in the cloned folder of the form: 
+### Install [sendgrid-python](https://github.com/sendgrid/sendgrid-python) 
+Simply install with pip, no need to follow the setup guide in the sendgrid-python github repo
+```
+pip install sendgrid
+```
+
+### Create a .env file in the cloned folder of the form: 
 
 ```
 # Clocker Secrets
@@ -41,13 +51,13 @@ SG_FROM=<sender email address verified in Sendgrid>
 SG_TO=<receiver of the confirmation email>
 ```
 
-  **Note** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
+**Note** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
 
 ```
 DRIVER_PATH=/Users/ME/Files/clocker_bot/chromedriver
 ```
 
-All set!
+**All set!**
 
 # Running
 
