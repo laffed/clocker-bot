@@ -65,7 +65,7 @@ DRIVER_PATH=/Users/ME/Files/clocker_bot/chromedriver
 
 # Running
 
-All you have to do is run the clocker bot is run the clocker.py script. Chromedriver will start a new session of Chrome and close the session when complete. 
+All you have to do is run the clocker.py script. Chromedriver will start a new session of Chrome and close the session when complete. 
 
 ## Setting up a custom terminal command
 
