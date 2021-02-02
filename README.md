@@ -21,15 +21,19 @@ Python Selenium ChromeDriver Bot that can quickly handle clocking events for a C
 pip install selenium
 ```
 ### Install [Chromedriver](https://chromedriver.chromium.org/):
-    - First determine which version of chrome you have by opening Chrome > help > About Google Chrome
-    - Choose the version of Chromedriver that matches your major version of Chrome
-    - Unzip and place the chromedriver.exe anywhere you'd like noting its path. The simplest location will be in the repository folder. 
+  1. First determine which version of chrome you have by opening Chrome > help > About Google Chrome
+  2. Choose the version of Chromedriver that matches your major version of Chrome
+  3. Unzip and place the chromedriver.exe anywhere you'd like noting its path. The simplest location will be in the repository folder. 
 
 ### Install [python-dotenv](https://pypi.org/project/python-dotenv/)
+```
+pip install python-dotenv
+```
+
 ### Signup for a free [Sendgrid](https://signup.sendgrid.com/) account
-    - Add your sender email to Sendgrid from the dashboard. 
-    - Navigate to Settings > API Keys and create a new API Key. 
-    - **WARNING** Sendgrid will only show you this API key ONCE so copy and paste it somewhere safe. 
+  1. Add your sender email to Sendgrid from the dashboard. 
+  2. Navigate to Settings > API Keys and create a new API Key. 
+  **WARNING** Sendgrid will only show you this API key ONCE so copy and paste it somewhere safe. 
 
 ### Install [sendgrid-python](https://github.com/sendgrid/sendgrid-python) 
 Simply install with pip, no need to follow the setup guide in the sendgrid-python github repo
@@ -51,7 +55,7 @@ SG_FROM=<sender email address verified in Sendgrid>
 SG_TO=<receiver of the confirmation email>
 ```
 
-**Note** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
+**Note:** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
 
 ```
 DRIVER_PATH=/Users/ME/Files/clocker_bot/chromedriver
@@ -65,10 +69,10 @@ All you have to do is run the clocker bot is run the clocker.py script. Chromedr
 
 ## Setting up a custom terminal command
 
-The easiest way create a custom terminal command to is create an alias function in the terminal that includes the path to clocker.py. You can avoid directly adding to your PATH by doing such. 
+The easiest way create a custom terminal command to is create an alias function in the terminal that includes the path to clocker.py. You can avoid directly adding to your PATH by doing such. Instructions on how to create an alias are shown for different shells below. Choose your shell.  
 
-**bash shell**
-in your .bash_profile or .bashrc file:
+#### bash 
+In your .bash_profile or .bashrc file:
 
 ```
 # Aliases
@@ -78,14 +82,14 @@ in your .bash_profile or .bashrc file:
 alias clockme="python3 ~/Developments/clocker_bot/clocker.py"
 ```
   
-**fish shell**
-in your terminal:
+#### fish 
+In your terminal:
 
 ```
 alias clockme='python3 $HOME/Development/clocker_bot/clocker.py'
 ```
 
-to save this alias for all sessions:
+Then to save this alias for all sessions:
 
 ```
 funcsave clockme
