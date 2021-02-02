@@ -57,8 +57,9 @@ All you have to do is run the clocker bot is run the clocker.py script. Chromedr
 
 The easiest way create a custom terminal command to is create an alias function in the terminal that includes the path to clocker.py. You can avoid directly adding to your PATH by doing such. 
 
-  1. bash
-    in your .bash_profile or .bashrc file:
+  1. bash\
+    in your .bash_profile or .bashrc file:\
+
 ```
 # Aliases
 # alias alias_name="command_to_run"
@@ -67,12 +68,15 @@ The easiest way create a custom terminal command to is create an alias function 
 alias clockme="python3 ~/Developments/clocker_bot/clocker.py"
 ```
   
-  2. fish
-     in your terminal:
+  2. fish\
+     in your terminal:\
+
 ```
 alias clockme='python3 $HOME/Development/clocker_bot/clocker.py'
 ```
-     to save this alias for all sessions
+
+     to save this alias for all sessions:
+
 ```
 funcsave clockme
 ```
