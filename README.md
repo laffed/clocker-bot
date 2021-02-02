@@ -10,7 +10,7 @@ Python Selenium ChromeDriver Bot that can quickly handle clocking events for a C
   5. sendgrid-python
   6. Sendgrid account (free)
 
-  **Note:** A Sendgrid account is used to enable email confirmation. If running clocker_bot from the terminal manually, the user will receive confirmation of the clock event in the terminal so in this case a Sendgrid is not needed. The Sendgrid function calls in clocker.py will need to be deleted/commented out if so. 
+  **Note:** A Sendgrid account is used to enable email confirmation. If running clocker_bot from the terminal manually, the user will receive confirmation of the clock event in the terminal so in this case the developer may choose to forgo the email confirmation functionality. The Sendgrid function calls in clocker.py will need to be deleted/commented out if so. 
 
 # Installation
 
