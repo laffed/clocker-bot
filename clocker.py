@@ -2,12 +2,15 @@ import os
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 from confirmer import sendConfirmation
 from confirmer import sendError
 
 load_dotenv()
 
 PATH = os.getenv('DRIVER_PATH')
+chrome_options = Options()
+chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(PATH)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
