@@ -11,7 +11,7 @@ load_dotenv()
 PATH = os.getenv('DRIVER_PATH')
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(executable_path=PATH,chrome_options=chrome_options)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
 
