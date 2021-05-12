@@ -8,13 +8,16 @@ from confirmer import sendConfirmation
 from confirmer import sendError
 
 load_dotenv()
-checkLoginStatus = sys.argv[1] == '--check'
 PATH = os.getenv('DRIVER_PATH')
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(executable_path=PATH, options=chrome_options)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
+
+checkLoginStatus = False
+if len(sys.argv) > 1:
+    checkLoginStatus = sys.argv[1] == '--check'
 
 
 def elementExists(val, type):
