@@ -11,7 +11,7 @@ load_dotenv()
 PATH = os.getenv('DRIVER_PATH')
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(executable_path=PATH,chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path=PATH,options=chrome_options)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
 
@@ -32,6 +32,7 @@ def elementExists(val, type):
 
 
 def clocker():
+    print("Spinning up warp drive...🚀")
     # start
     driver.get("https://www.cnc-claimsource.com/")
 
