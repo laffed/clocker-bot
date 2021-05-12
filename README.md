@@ -58,7 +58,7 @@ SG_TO=<receiver of the confirmation email>
 **Note:** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
 
 ```
-DRIVER_PATH=/Users/ME/Files/clocker_bot/chromedriver
+DRIVER_PATH=/Users/MyUser/Files/clocker_bot/chromedriver
 ```
 
 **All set!**
@@ -66,6 +66,15 @@ DRIVER_PATH=/Users/ME/Files/clocker_bot/chromedriver
 # Running
 
 All you have to do is run the clocker.py script. Chromedriver will start a new HEADLESS session of Chrome, close the session when complete and show the response status in the terminal. 
+
+## Command Line Arguments
+
+Running clocker.py with the command line argument **--check** will your current clock in/out status. 
+
+```
+$ python3 clocker.py --check
+// Currently Clocked In
+```
 
 ## Setting up a custom terminal command
 
@@ -79,14 +88,16 @@ In your .bash_profile or .bashrc file:
 # alias alias_name="command_to_run"
 # alias yourCustomName="<python or python3> <path to clocker.py>"
 
-alias clockme="python3 ~/Developments/clocker_bot/clocker.py"
+$ alias clockme="python3 ~/Developments/clocker_bot/clocker.py"
+$ alias isclocked="python3 ~/Developments/clocker_bot/clocker.py --check"
 ```
   
 #### fish 
 In your terminal:
 
 ```
-alias clockme='python3 $HOME/Development/clocker_bot/clocker.py'
+$ alias clockme='python3 $HOME/Development/clocker_bot/clocker.py'
+$ alias isclocked='python3 $HOME/Development/clocker_bot/clocker.py --check'
 ```
 
 Then to save this alias for all sessions:
