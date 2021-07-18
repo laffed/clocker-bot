@@ -35,6 +35,5 @@ def sendError():
     try:
         sg = SendGridAPIClient(api_key)
         response = sg.send(message)
-        print(response.status_code)
     except Exception as e:
         print(e.message)
