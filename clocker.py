@@ -1,5 +1,7 @@
 import os
 import sys
+import json
+from datetime import datetime
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -15,6 +17,7 @@ driver = webdriver.Chrome(executable_path=PATH, options=chrome_options)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
 
+FMT = '%H:%M:%S'
 checkLoginStatus = False
 if len(sys.argv) > 1:
     checkLoginStatus = sys.argv[1] == '--check'
@@ -35,12 +38,33 @@ def elementExists(val, type):
             return False
 
 
+def writeClockInTime():
+    timeIn = datetime.now().strftime(FMT)
+    data = {
+        "inTime": timeIn
+    }
+
+    with open('DB.json', 'w') as db:
+        json.dump(data, db)
+
+
+def calculateTime():
+    timeOut = datetime.now().strftime(FMT)
+    with open('DB.json') as db:
+        data = json.load(db)
+        timeIn = data['inTime']
+        deltaT = datetime.strptime(timeOut, FMT) - \
+            datetime.strptime(timeIn, FMT)
+        print(str('Δt ' + deltaT))
+
+
 def statusChecker():
     # clock page
     if elementExists('clockin', 'id'):
         print('Currently Clocked Out')
     elif elementExists('clockout', 'id'):
         print('Currently Clocked In')
+        calculateTime()
     return
 
 
@@ -57,7 +81,12 @@ def clocker():
     if clocker != False:
         clocker.click()
         sendConfirmation(isClockingIn)
-        print('Clocked In' if isClockingIn else 'Clocked Out')
+        if isClockingIn:
+            print('Clocked In')
+            writeClockInTime()
+        else:
+            print('Clocked Out')
+            calculateTime()
     else:
         print('error')
         sendError()
