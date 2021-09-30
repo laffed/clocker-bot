@@ -45,7 +45,7 @@ def writeClockInTime():
         "inTime": timeIn
     }
 
-    with open('DB.json', 'w') as db:
+    with open(dbPath, 'w') as db:
         json.dump(data, db)
 
 
