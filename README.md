@@ -57,7 +57,7 @@ pip install sendgrid
 # Clocker Secrets
 CNC_USR=<your CNC username>
 CNC_PW=<your CNC password>
-DRIVER_PATH=<path to the chromedriver.exe>
+DRIVER_PATH=<absolute path to the chromedriver.exe>
 
 # Confirmer Secrets
 SENDGRID_KEY=<Sendgrid API Key>
