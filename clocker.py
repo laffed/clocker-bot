@@ -50,12 +50,12 @@ def writeClockInTime():
 
 def calculateTime():
     timeOut = datetime.now().strftime(FMT)
-    with open('DB.json') as db:
+    with open('DB.json', 'r') as db:
         data = json.load(db)
         timeIn = data['inTime']
         deltaT = datetime.strptime(timeOut, FMT) - \
             datetime.strptime(timeIn, FMT)
-        print(str('Δt ' + deltaT))
+        print('Δt = ' + str(deltaT))
 
 
 def statusChecker():
