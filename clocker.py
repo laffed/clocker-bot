@@ -16,6 +16,7 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(executable_path=PATH, options=chrome_options)
 usr = os.getenv('CNC_USR')
 pw = os.getenv('CNC_PW')
+dbPath = os.getenv('DB_PATH')
 
 FMT = '%H:%M:%S'
 checkLoginStatus = False
@@ -50,7 +51,7 @@ def writeClockInTime():
 
 def calculateTime():
     timeOut = datetime.now().strftime(FMT)
-    with open('DB.json', 'r') as db:
+    with open(dbPath, 'r') as db:
         data = json.load(db)
         timeIn = data['inTime']
         deltaT = datetime.strptime(timeOut, FMT) - \

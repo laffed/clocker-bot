@@ -63,6 +63,9 @@ DRIVER_PATH=<path to the chromedriver.exe>
 SENDGRID_KEY=<Sendgrid API Key>
 SG_FROM=<sender email address verified in Sendgrid>
 SG_TO=<receiver of the confirmation email>
+
+# MISC
+DB_PATH=<absolute path to current directory>/DB.json
 ```
 
 **Note:** The DRIVER_PATH variable needs to be the absolute path to the chromedriver executable. If chromedriver was placed in the repo folder for example:
